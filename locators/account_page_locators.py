@@ -12,5 +12,7 @@ class AccountPageLocators:
 
 	FEED_BUTTON = (By.XPATH, '//p[contains(text(),"Лента Заказов")]')
 
-	HISTORY_FEED = (By.XPATH, '// p[contains(text(), "Выполнено за сегодня:")]')
+	HISTORY_FEED_TODAY = (By.XPATH, '// p[contains(text(), "Выполнено за сегодня:")]')
+
+	HISTORY_BUTTON = (By.CSS_SELECTOR, '//a[ text()="История заказов" ]')
 

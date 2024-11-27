@@ -37,8 +37,13 @@ class AccountPage(BasePage):
 
 	@allure.step('проверка отображения выполненных заказов')
 	def check_history_feed(self):
-		return self.check_displaying_of_element(AccountPageLocators.HISTORY_FEED)
+		return self.check_displaying_of_element(AccountPageLocators.HISTORY_FEED_TODAY)
 
 	@allure.step('Ожидание отображения заказов')
 	def wait_visible_history_feed(self):
-		self.find_element_with_wait(AccountPageLocators.HISTORY_FEED)
+		self.find_element_with_wait(AccountPageLocators.HISTORY_FEED_TODAY)
+
+	@allure.step('Кликнуть по кнопке "История заказов"')
+	def click_feed_button(self):
+		self.find_element_with_wait(AccountPageLocators.FEED_BUTTON)
+		self.click_to_element(AccountPageLocators.FEED_BUTTON)

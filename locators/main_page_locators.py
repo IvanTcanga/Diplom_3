@@ -15,12 +15,6 @@ class MainPageLocators:
 
 	CONSTRUCTOR_BUTTON = (By.XPATH, '//p[contains(text(),"Конструктор")]')  #constructor button
 
-	ROLLS_h = (By.XPATH, '//span[text()="Булки"]/parent::div')  #раздел булки
-
-	SAUCES_h = (By.XPATH, '//span[text()="Соусы"]/parent::div')  #раздел соусы
-
-	FILLINGS_h = (By.XPATH, '//span[text()="Начинки"]/parent::div')  #раздел начинка
-
 	LOGO_STELLAR_BURGER_MAIN_PAGE = (
 	By.XPATH, '//div[@class="AppHeader_header__logo__2D0X2"]')  #logo stellar burger main page
 
@@ -35,3 +29,18 @@ class MainPageLocators:
 	DETAILS_OF_INGREDIENT = (By.XPATH, '//p[contains(text(),"Калории,ккал")]')
 
 	INGREDIENT_FROM_CONSTRUCTOR = (By.XPATH, '//img[@alt="Флюоресцентная булка R2-D3"]')
+
+	BUTTON_CLOSE_MODAL_WINDOW_DETAILS_ING = (By.XPATH, '//section[contains(@class, '
+									'"Modal_modal_opened")]//button[contains(@class, "close")]')
+
+	BURGER_CONSTRUCTOR_BASKET = (By.XPATH, '//section[contains(@class, "BurgerConstructor_basket")]')
+
+	COUNTER_INGREDIENT_IN_BASKET = (By.XPATH, '//p[@class="text text_type_digits-medium mr-3"]')
+
+	MODAL_WINDOW_AFTER_CREATE_ORDER = (By.XPATH, '//section[contains(@class, "Modal_modal_opened")]/div[contains'
+											 '(@class, "Modal_modal__container")]')
+
+	#крестик для закрытия окна
+	CLOSE_MOD_WINDOW_AFTER_CREATE_ORDER = By.XPATH, "//button[@type='button']"
+
+	NINES_IN_MOD_WIN_AFTER_CREATE_ORDER = (By.XPATH, '//section[contains(@class, "Modal_modal_opened")]//h2')

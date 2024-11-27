@@ -12,10 +12,6 @@ class BasePage:
     def find_element_with_wait(self, locator):
         return WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
 
-    # @allure.step('Клик по элементу')
-    # def click_to_element(self, locator):
-    #     element = self.check_element_is_clickable(locator)
-    #     self.driver.execute_script("arguments[0].click();", element)
 
     @allure.step('Кликнуть на элемент')
     def click_to_element(self, locator):
@@ -29,7 +25,7 @@ class BasePage:
 
     @allure.step('Проверить ,что элемент кликабелен')
     def check_element_is_clickable(self, locator):
-        return WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable(locator))
+        return WebDriverWait(self.driver, 15).until(expected_conditions.element_to_be_clickable(locator))
 
     @allure.step('Подождать закрытие элемента')
     def wait_closing_element(self, locator):
@@ -56,7 +52,17 @@ class BasePage:
     def check_displaying_of_element(self, locator):
         return self.driver.find_element(*locator).is_displayed()
 
-    @allure.step('Переключиться на новое окно')
-    def switch_to_next_tab(self):
-        self.driver.switch_to.window(self.driver.window_handles[-1])
+    @allure.step('Подождать смену текста на элементе')
+    def wait_for_element_to_change_text(self, locator, value):
+        return WebDriverWait(self.driver, 10).until_not(expected_conditions.
+                                                        text_to_be_present_in_element(locator, value))
+
+    def click_on_element_js(self, locator):
+        self.driver.execute_script("arguments[0].click();", locator)
+
+    def find_element_with_wait_overlay(self, locator):
+        WebDriverWait(self.driver, 10).until(
+            expected_conditions.visibility_of_element_located(locator))
+        return self.driver.find_element(*locator)
+
 

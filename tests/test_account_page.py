@@ -31,6 +31,7 @@ class TestAccountPage:
 		account_page.wait_visible_login_button()
 		assert account_page.check_displaying_of_login_button()
 
+	#тест ниже периодически падает в мазиле
 	@allure.title("Проверка переход в раздел «История заказов»")
 	def test_go_to_history_orders(self, driver, create_and_delete_user):
 		email, password = create_and_delete_user

@@ -18,12 +18,21 @@ class OrderFeedPageLocators:
 
 	ORDER_LIST_READY = (By.XPATH, '//ul[contains(@class, "OrderFeed_orderListReady")]/li') # заказы в работе
 
-	#искомый заказ
-	# TARGET_ORDER_READY_IN_UL = (By.XPATH, f'//ul[contains(@class, "OrderFeed_orderListReady")]/li[contains(text(), "{order_number}")]')
+	ORDER_CARD = (By.XPATH, '//*[contains(@class, "OrderHistory_listItem")]')
 
-	NUMBER_OF_ORDER = (By.XPATH, '//li[contains(@class, "text_type_digits-default")]') # Номер заказа
-	# // div[ @
-	#
-	# class ='OrderFeed_ordersData__1L6Iv'] // li[3]
-	# # Номер заказа в ленте — заготовка, в которую нужно подставить id искомого заказа
-	# id_order_card_in_feed_with_substitutions = (By.XPATH, './/*[text()="{order_id}"]')
+	TITLE_ORDER_CARD = (By.XPATH, '//*[contains(@class, "OrderHistory_listItem")]//h2')
+
+	NUMBER_ORDER_IN_FEED_PAGE = (By.XPATH, './/*[text()="{order_id}"]')
+
+	ID_ORDER_CARD = (By.XPATH, '(//div[contains(@class, "OrderHistory_textBox")]'
+							   '/p[contains(@class, "text_type_digits-default")])[1]')
+
+	CNT_ORDERS_ALL_TIME = (By.XPATH, '//p[text()="Выполнено за все время:"]/following-sibling::p')
+
+	CNT_ORDERS_TODAY = (By.XPATH, '//p[text()="Выполнено за сегодня:"]/following-sibling::p')
+
+	#номер заказа в работе
+	NUM_ORDER_IN_WORK = (By.XPATH, '//ul[contains(@class, '
+											 '"OrderFeed_orderListReady")]/li[contains(@class, '
+											 '"text_type_digits-default")]')
+
