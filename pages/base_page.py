@@ -12,9 +12,16 @@ class BasePage:
     def find_element_with_wait(self, locator):
         return WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
 
-    @allure.step('Клик по элементу')
+    # @allure.step('Клик по элементу')
+    # def click_to_element(self, locator):
+    #     element = self.check_element_is_clickable(locator)
+    #     self.driver.execute_script("arguments[0].click();", element)
+
+    @allure.step('Кликнуть на элемент')
     def click_to_element(self, locator):
-        self.driver.find_element(*locator).click()
+        element = self.check_element_is_clickable(locator)
+        click = ActionChains(self.driver)
+        click.move_to_element(element).click().perform()
 
     @allure.step('Перетащить элемент')
     def drag_and_drop_element(self, from_element, to_element):

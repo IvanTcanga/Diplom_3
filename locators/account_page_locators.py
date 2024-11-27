@@ -4,9 +4,9 @@ from selenium.webdriver.common.by import By
 class AccountPageLocators:
 	LOGIN_BUTTON = (By.XPATH, '//button[ text()="Войти" ]')  #кнопка войти на странице login
 
-	EMAIL_INPUT_FIELD_LOGIN = [By.XPATH, '//input[@name="name"]']
+	EMAIL_INPUT_FIELD_LOGIN = (By.XPATH, '//input[@name="name"]')
 
-	PASSWORD_INPUT_FIELD_LOGIN = [By.XPATH, '//input[@name="Пароль"]']
+	PASSWORD_INPUT_FIELD_LOGIN = (By.XPATH, '//input[@name="Пароль"]')
 
 	BUTTON_EXIT_FROM_ACCOUNT = (By.XPATH, '//button[contains(text(), "Выход")]')  # кнопка Выход из ЛК
 

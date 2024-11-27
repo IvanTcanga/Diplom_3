@@ -24,10 +24,3 @@ def auth_user_and_get_creds():
 
 def get_access_token(response):
     return response.json().get('accessToken')
-
-
-if __name__ == '__main__':
-    payload, response = auth_user_and_get_creds()
-    print(response.status_code)
-    print(payload.get('email'))
-    print(payload.get('password'))

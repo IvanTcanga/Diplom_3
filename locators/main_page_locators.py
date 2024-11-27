@@ -13,7 +13,6 @@ class MainPageLocators:
 
 	RESET_PASSWORD_LINK = (By.XPATH, '//a[ text()="Восстановить пароль" ]')  #ссылка на кнопку восстановить пароль
 
-
 	CONSTRUCTOR_BUTTON = (By.XPATH, '//p[contains(text(),"Конструктор")]')  #constructor button
 
 	ROLLS_h = (By.XPATH, '//span[text()="Булки"]/parent::div')  #раздел булки
@@ -29,3 +28,10 @@ class MainPageLocators:
 
 	INGREDIENT_LINK = (By.XPATH, '(.//p[@class="BurgerIngredient_ingredient__text__yp3dH"])[1]')
 
+	FEED_BUTTON = (By.XPATH, '//p[contains(text(),"Лента Заказов")]')
+
+	MAKE_BURGER_TITLE = (By.XPATH, '//h1[@class="text text_type_main-large mb-5 mt-10"]')
+
+	DETAILS_OF_INGREDIENT = (By.XPATH, '//p[contains(text(),"Калории,ккал")]')
+
+	INGREDIENT_FROM_CONSTRUCTOR = (By.XPATH, '//img[@alt="Флюоресцентная булка R2-D3"]')
